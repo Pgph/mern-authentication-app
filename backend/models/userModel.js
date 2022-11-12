@@ -13,7 +13,6 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true,
-    min: 6,
   },
 });
 
@@ -58,13 +57,11 @@ userSchema.statics.login = async function (email, password) {
   }
 
   const user = await this.findOne({ email });
-
   if (!user) {
     throw Error("Invalid email");
   }
 
   const match = await bcrypt.compare(password, user.password);
-
   if (!match) {
     throw Error("Invalid password");
   }
