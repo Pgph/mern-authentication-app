@@ -3,15 +3,10 @@ import { useState } from "react";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({});
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(email, password);
-    const user = {
-      email,
-      password,
-    };
   };
 
   return (
