@@ -18,12 +18,14 @@ const Login = () => {
 
       <label>Email address:</label>
       <input
+        autoComplete="on"
         type="email"
         onChange={(e) => setEmail(e.target.value)}
         value={email}
       />
       <label>Password:</label>
       <input
+        autoComplete="on"
         type="password"
         onChange={(e) => setPassword(e.target.value)}
         value={password}
